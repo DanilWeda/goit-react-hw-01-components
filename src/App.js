@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import Statistics from './components/Statistics';
 import Profile from './components/Profile'
+import FriendList from './components/FriendList';
 import user from './user.json';
 import data from './data.json';
-import Statistics from './components/Statistics';
+import friends from './friends.json';
 
 const App = () => {
 	const [userData, setUserData] = useState(null)
@@ -20,6 +22,7 @@ const App = () => {
 			{userData && <Profile {...userData} />}
 			<Profile {...user} />
 			<Statistics stats={data} />
+			<FriendList friends={friends} />
 		</div>
 	)
 }
