@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Profile from './components/Profile'
 import user from './user.json';
+import data from './data.json';
+import Statistics from './components/Statistics';
 
 const App = () => {
 	const [userData, setUserData] = useState(null)
-	console.log(user)
 
 	const fetchUser = () => {
 		fetch('user.json')
@@ -17,7 +18,8 @@ const App = () => {
 	return (
 		<div>
 			{userData && <Profile {...userData} />}
-			{user && <Profile {...user} />}
+			<Profile {...user} />
+			<Statistics stats={data} />
 		</div>
 	)
 }
