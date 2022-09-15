@@ -7,5 +7,6 @@
 }
 
 .active {
+  composes: status;
 	background-color: green;
 }
